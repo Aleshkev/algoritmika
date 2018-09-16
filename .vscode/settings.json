@@ -1,0 +1,28 @@
+{
+  "files.associations": {
+    "iostream": "cpp",
+    "tuple": "cpp",
+    "array": "cpp",
+    "deque": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp",
+    "initializer_list": "cpp",
+    "valarray": "cpp",
+    "*.tcc": "cpp",
+    "cmath": "cpp",
+    "complex": "cpp",
+    "iomanip": "cpp",
+    "functional": "cpp",
+    "future": "cpp",
+    "istream": "cpp",
+    "utility": "cpp",
+    "ostream": "cpp"
+  },
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+}

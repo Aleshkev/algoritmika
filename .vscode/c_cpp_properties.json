@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "defines": [
+                "_DEBUG",
+                "UNICODE"
+            ],
+            "compilerPath": "c:\\tools\\mingw64\\bin\\gcc.exe",
+            "cppStandard": "c++11",
+ 
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
