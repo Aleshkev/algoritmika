@@ -21,7 +21,7 @@ Also, don't even suggest changing carefully thought-out variable names like `tre
 
 Every contest I took part in has its own directory, ending with `-cwd`. Contests which are strongly associated with their tasks, like OI, have their own directories.
 
-`archaic/` contains files copied from the mighty past. `archaic/1/` ≈ 2016/2017, `archaic/3/` ≈ 2017/2018, but it's not a strict rule.
+`archaic/` contains files copied from the mighty past. `archaic/1/` ≈2016/17; `2/` ≈2016/17, but on school computer, `3/` ≈ 2017/2018. Nothing here is a strict rule, not all solutions are correct, there may be duplicates across directories.
 
 ## License
 
