@@ -17,6 +17,12 @@ Code quality varies from file to file, from line to line. Generally, files are f
 
 Also, don't even suggest changing carefully thought-out variable names like `trevor`, `ardrev` or `tablitsa`.
 
+## Directory structure
+
+Every contest I took part in has its own directory, ending with `-cwd`. Contests which are strongly associated with their tasks, like OI, have their own directories.
+
+`archaic/` contains files copied from the mighty past. `archaic/1/` ≈ 2016/2017, `archaic/3/` ≈ 2017/2018, but it's not a strict rule.
+
 ## License
 
 My code (all .cpp and .py files) are available under MIT License.
