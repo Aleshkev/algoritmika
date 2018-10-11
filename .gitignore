@@ -1,5 +1,6 @@
 *.exe
 b
 c
+.idea/
 
 draft/*
