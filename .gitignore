@@ -4,3 +4,8 @@ c
 .idea/
 
 draft/*
+
+__pycache__/
+*.py[cod]
+*$py.class
+
