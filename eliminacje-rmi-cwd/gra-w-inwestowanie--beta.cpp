@@ -31,10 +31,7 @@ bool check_t(I t) {
   // moich "optymalizacjach" dostaje 25 punktów ze złymi odpowiedziami.
   //
   // Ten contest to były eliminacje na MIĘDZYNARODOWĄ OLIMPIADĘ INFORMATYCZNĄ
-  // RMI ("Seniorów", czyli polskich licealistów)!! I gdybym miał te 100 punktów
-  // byłbym DRUGI W RANKINGU!! JAKO UCZEŃ 1. KLASY!!
-  //
-  // No cóż, kiedyś będę ekspertem od zmarnowanych życiowych szans.
+  // RMI!! I gdybym miał te 100 punktów byłbym DRUGI W RANKINGU!!
 
   for (I z = 0; z <= t / (k + 2); ++z) {
     if (check(t, z)) {
