@@ -1,31 +1,32 @@
-# About
+# Algoritmika
 
-It is a repository where I put most of my solutions for various competetive programming problems. Such repositories became somewhat fashionable lately, and such fashion-forward person as I can't be left behind.
+It is a repository where I put most of my solutions for various competitive programming problems. Such repositories have become somewhat fashionable lately, and such fashion-forward person as I can't be left behind.
 
-> First spend two hours on a problem. \
-> Only then, if you still don't know the solution, you can look for a hint.
+> First, spend two hours on a problem. \
+> Only then, if you still don't know the solution, look for a hint.
 >
 > [...]
-> If you look at someone's code, you must analyze it and understand it.
-When you are sure you know how everything works, write it from scratch, without looking at this code again.
+> If you look at someone else's code, you must analyze and understand it.
+When you are sure you know how everything works, don't look at this code again and write your own from scratch.
 >
-> <cite>— Mr Daniel Olkowski
+> <cite>*— Mr Daniel Olkowski*
 
-Please don't use these solutions for evil. I publish these in hope of bettering the humankind, not enabling someone to cheat.
+Please don't use these solutions for evil. Do not use them to cheat. Do not steal them without attribution (see [license](#license) slightly below).
 
 Code quality varies from file to file, from line to line. Generally, files are formatted using Google style and I'm a fan of spaces in expressions like `a + b`, but I also usually use `typedef intmax_t I`, so it all kind of cancels out.
+Please remember, programming contests are a different world from software engineering and 'good practices' are consistently and purposefully ignored.
 
 Also, don't even suggest changing carefully thought-out variable names like `trevor`, `ardrev` or `tablitsa`.
-
-## Directory structure
-
-Every contest I took part in has its own directory, ending with `-cwd`. Contests which are strongly associated with their tasks, like OI, have their own directories.
-
-`archaic/` contains files copied from the mighty past. `archaic/1/` ≈2016/17; `2/` ≈2016/17, but on school computer, `3/` ≈ 2017/2018. Nothing here is a strict rule, not all solutions are correct, there may be duplicates across directories.
 
 ## License
 
 My code (all .cpp and .py files) are available under MIT License.
+
+## Directory structure
+
+Every contest I took part in has its own directory. I usually throw away all non-working solutions.
+
+`archaic/` contains files copied from the mighty past (1 ≈ 2016/17; 2 ≈ 2016/17-school; 3 ≈ 2017/2018).
 
 # Technicalities
 
@@ -43,14 +44,12 @@ Problems with this configuration:
 
 ### Files
 
-`tasks.json`: build tasks.
+1. `tasks.json`: build tasks.
 Contains path to `gcc.exe`.
-
-`launch.json`: launches debugger.
+2. `launch.json`: launches debugger.
 First, executes the `g++ debug` task, then launches debugger.
 Contains path to `gdb.exe`.
-
-`settings.json`:
+3. `settings.json`:
 sets `clang-format` style to `Google`.
 Sets indentation style to 2 spaces (matching with Google style).
 Enables autoformatting on save.
