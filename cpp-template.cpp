@@ -11,7 +11,7 @@ int main() {
 
   I n;
 
-#ifdef __MINGW32__
+#ifdef UNITEST
   cout.flush();
   system("pause");
 #endif
