@@ -1,11 +1,13 @@
 // Also known as Perfect Security from Codeforces.
 // http://codeforces.com/contest/947/problem/C
 
+// This soultion is O(n lg n), but too slow.
+
 #include <bits/stdc++.h>
 
 using namespace std;
 
-typedef intmax_t I;
+typedef int32_t I;
 
 const I depth = 30;
 const I w = (1 << depth);
