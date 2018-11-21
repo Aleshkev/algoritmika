@@ -1,4 +1,4 @@
-// Also known as EDIST - Edit distance from SPOJ.
+// EDIST - Edit distance from SPOJ.
 // https://www.spoj.com/problems/EDIST/
 
 #include <bits/stdc++.h>
