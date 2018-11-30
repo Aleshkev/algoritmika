@@ -61,5 +61,8 @@
   "C_Cpp.clang_format_fallbackStyle": "Google",
   "editor.detectIndentation": false,
   "editor.tabSize": 2,
+  "[python]": {
+    "editor.tabSize": 4
+  },
   "editor.formatOnSave": true,
 }
