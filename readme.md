@@ -24,9 +24,9 @@ My code (all .cpp and .py files) are available under MIT License.
 
 ## Directory structure
 
-Every contest I took part in has its own directory. I usually throw away all non-working solutions.
+Every contest I took part in has its own directory. I usually throw away all non-working solutions, but some may be left.
 
-`archaic/` contains files copied from the mighty past (1 ≈ 2016/17; 2 ≈ 2016/17-school; 3 ≈ 2017/2018).
+`archive/` contains files copied from the mighty past (1 ≈ 2016/17; 2 ≈ 2016/17-school; 3 ≈ 2017/2018).
 
 # Technicalities
 
