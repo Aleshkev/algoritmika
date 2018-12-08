@@ -1,7 +1,7 @@
 // Also known as Perfect Security from Codeforces.
 // http://codeforces.com/contest/947/problem/C
 
-// This soultion is O(n lg n), but too slow.
+// This solution is O(n lg n), but too slow.
 
 #include <bits/stdc++.h>
 
