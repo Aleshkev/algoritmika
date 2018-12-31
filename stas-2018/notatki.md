@@ -56,7 +56,7 @@ Rozwiązania zadań
 
 - *Szyfr.*
 - *Przyjęcie:*
-  graf warstwowy będzie dwudzielny: łączymy ze sobą pary; dla `i = 1..n` krawędź od `2i do 2i + 1` — krawędź oznacza, że dwa wierzchołki nie mają takiego samego dania.
+  graf będzie dwudzielny jeżeli połączymy ze sobą pary z wejścia oraz dla `i = 1..n` krawędź od `2i` do `2i + 1` — krawędź oznacza, że dwa wierzchołki nie mają takiego samego dania.
 
 - *Śmieci:*
   tej samej krawędzi nie opłaca się brać dwa razy (ćw. udowodnić); czyli chcemy każdą krawędź, którą trzeba zmienić przejechać dokładnie raz: trzeba znaleźć w każdej spójnej z takich krawędzi cykl Eulera. Ponieważ (z treści zadania) nie można dwa razy przejechać przez ten sam wierzchołek w jednej ścieżce, przy szukaniu cyklu trzeba po odwiedzeniu dwa razy tego samego wierzchołka odcinać część ścieżki.
