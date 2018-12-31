@@ -41,8 +41,8 @@ Teksty
 
     ```
     <[ abc ]     .[ abc ]   >
-            ^
-            i
+                 ^
+                 i
     ```
   - *maxrot na KI: można liniowo: alg. Duvala*
 
