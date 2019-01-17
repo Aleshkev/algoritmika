@@ -33,7 +33,7 @@ My code (all .cpp and .py files) are available under MIT License.
 
 After long battles with backward-progressive Code::Blocks "IDE", I switched to lightweight [VS Code](https://code.visualstudio.com). Unfortunately for me, setting it up wasn't as easy as one would hope.
 
-So I wrote (mainly for future me) what I did, why, and what I may need to change in the future. The difficulty of setup is also the reason I decided to just put my `.vscode` folder in the repository, along with absolute paths to my compiler and debugger (the paths are standard installation directory of MinGW from Chocolatey).
+The difficulty of setup is the reason I decided to just put my `.vscode` folder in the repository.
 
 But I like the resulting configuration, where I can just compile *any* C++ file immediately, and even debug it with the amazing VS Code debugging experience.
 
