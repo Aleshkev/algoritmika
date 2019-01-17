@@ -7,7 +7,7 @@
         "UNICODE",
         "UNITEST"
       ],
-      "compilerPath": "c:\\tools\\mingw64\\bin\\gcc.exe",
+      "compilerPath": "gcc.exe",
       "cppStandard": "c++11",
       "intelliSenseMode": "gcc-x64"
     }
