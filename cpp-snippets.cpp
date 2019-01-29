@@ -27,6 +27,20 @@ I f_lower_bound(I lo, I hi, function<bool(I)> f) {
   return lo;
 }
 
+// Takes string with first element being a placeholder, e.g. for "#abcabc"
+// returns [-1, 0, 0, 0, 1, 2, 3].
+vector<I> compute_mp(const string &a) {
+  I n = a.size() - 1;
+  vector<I> mp(n + 1);
+  mp[0] = -1;
+  for (I i = 1; i <= n; ++i) {
+    mp[i] = mp[i - 1];
+    while (mp[i] > -1 && a[mp[i] + 1] != a[i]) mp[i] = mp[mp[i]];
+    ++mp[i];
+  }
+  return mp;
+}
+
 // Test the functions.
 int main() {
   vector<I> v = {1, 1, 2, 2, 2, 3, 4, 10, 20, 1, 2, 3};
