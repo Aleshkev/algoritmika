@@ -134,3 +134,115 @@ Gry:
 - *Zad.:* *Antinim:* wygrywa ten, kto w zwykłym nimie by przegrał. Jaka jest strategia?
 
 - *Hackenbush* [skąd się biorą te nazwy, nie mam pojęcia jak je zapisywać]: założyć, że gra jest drzewem/lasem; jak w wierzchołku dzieci mają nimliczby, poddrzewo do tego wierzchołka można zastąpić ścieżką o długości xora mexa poddrzewa (lub ost. wierzhcolkow w poddrzewie?). Dwa poddrzewa to tak naprawdę dwie osobne gry. Możemy je połączyć.
+
+## Teoria gier
+
+*2019-01-04*
+
+Specjalna dziedzina, istnieje tylko 6 zadań które znalazł Staś, z czego niektórych nie może dać bo muszą móc być na conteście.
+
+Gry:
+- kompletne/niekompletne
+- skończone/nieskończone
+- deterministyczne/niedeterministyczne
+- symetryczne/niesymetryczne
+
+*Klucz do prawie wszystkich zadań na kółku:* jeżeli wykonując jakiś ruch da się dojść do stanu przegrywającego, stan jest wygrywający.
+
+- Problem:
+
+  ```
+  [START]
+    v
+    O > O
+    ^   v
+    \-- O
+        v
+        O
+        v
+  [PRZEGRYWAJĄCY]
+  ```
+
+- Znany przykład: *drabina:* drabina wysokości `h`, każdy gracz może przesunąć się o dowolną liczbę od `1` do `k` jednostek.
+
+- Kolejny przykład: na szachownicy: król w lewym dolnym rogu, może iść tylko w prawo lub do góry; gracze na zmianę go przesuwają o jedno pole. Są specjalne trampoliny; jeżeli król na nim jest to może się jeszcze raz ruszyć w tym samym ruchu. W prawym górnym rogu stoi skoczek. Kto pierwszy zbije go królem, wygrywa. Rozwiązać można dynamikiem: miejsce skoczka to pozycja przegrywająca (bo oznacza to, że przeciwnik już go zbił).
+
+- *Nim:* strategię wygrywająca ma gracz pierwszy iff xor wszystkich wielkości stosów nie jest równy `0`. (*Dowód:* indukcyjnie, dla 0 stan jest przegrywający, dalej ze stanu gdzie xor &ne; 0, można przejść zawsze do stanu gdzie xor = 0.)
+
+- *Nim na schodkach:* ... Sprowadza się do zwykłego Nim na nieparzystych schodkach.
+
+- *Twierdzenie Sprague-Grundy'ego:* zakłada, że przegrywa kto nie ma ruchu
+  &rarr; wychodzi z niego dowód na rozw. do nim.
+
+- *Nim-liczba*
+
+- *Przykład:* 1D-plansza, dł n &le; 5000, gracz który sprawi, że trzy krzyżyki są koło siebie, wygrywa. Każdy gracz stawia jednego krzyżyka w ruchu. Zmieniamy zasady: nie można stawiać krzyżyka w: `* * x * *`. Dla każdej długości skracamy planszę i dynamicznie liczymy nim-liczby dla tych stanów O(n&sup2;). Nim-liczba dla stanów dwóch gier jest xorem dwóch liczb po lewej i prawej.
+
+- *Zad.: Antinim:* wygrywa ten, kto w zwykłym nimie by przegrał. Jaka jest strategia?
+
+- *Hackenbush* [skąd się biorą te nazwy, nie mam pojęcia jak je zapisywać]: założyć, że gra jest drzewem/lasem; jak w wierzchołku dzieci mają nimliczby, poddrzewo do tego wierzchołka można zastąpić ścieżką o długości xora mexa poddrzewa (lub ost. wierzhcolkow w poddrzewie?). Dwa poddrzewa to tak naprawdę dwie osobne gry. Możemy je połączyć.
+
+## Dynamiki na drzewach
+
+*2019-01-18*
+
+"Depek" to najgorsze co spotkało język polski od profesora Miodka.
+
+Pojęcia: drzewo, poddrzewo, naddrzewo (drzewo - poddrzewo + wierzchołek).
+
+- *Policzenie rozmiaru poddrzewa dla każdego wierzchołka.*
+
+- *Najdłuższa ścieżka w drzewie, bez dwóch DFS/BFS-ów:* dla każdego wierzchołka policzyć dwie najdłuższe ścieżki idące tylko w dół; [...].
+
+- *Dla każdego wierzchołka, suma odległości od wszystkich innych:* 1. wynik dla każdego poddrzewa (iść od dołu); 2. wynik dla każdego poddrzewa połączyć z wynikiem dla naddrzewa (iść od góry). Problemem może być cofnięcie krawędzi przy łączeniu (&approx; między poddrzewem a naddrzewem).
+
+### Depeki na drzewie n&sup2;
+- *Dane drzewo ważone, liczba `k`: chcemy odwiedzić `k` różnych pokoi w tym drzewie:* `dp[v][k] = Min`; dwa dynamiki: najtańszy w tę i z powrotem i najtańszy gdzieś; `dpw[v][k]`, `dp*nw[v][k]` (`w`racamy, `n`ie `w`racamy), `wyn[v]`
+
+  Problem pomocniczy: dwóch synów, policzyć wynik:iter 1..k, w jednym bierzemy L, w drugim R
+
+  `M*i=0^k in(dp[s1][i] + dp[s2][k-i])`
+
+  na tym samym conteście: zadanko na symulację syfnej gry &larr; znaleźć, bo będzie kiedyś!
+
+Trudne:
+- *Żar*
+- *Strajki*
+
+Luźne kółko przed feriami
+---
+*2019-01-25*
+
+Przydatne z teorii liczb:
+- sito Erastotenesa
+- odwrotność modulo
+- rozszerzony algorytm Euklidesa
+
+Najbardziej prawdopodonbe algorytmy grafowe:
+- silnie spójne
+- DFS
+- toposort
+- DP na grafodrzewach
+- LCA – Least Common Anticipator
+
+Najbardziej przydatne algorytmy:
+- testowanie
+- ascii art
+- klepanie brutów
+
+<div style="text-align: center">
+
+```
+_______________________________________________________
+_______________________________________________________
+   __  _   ___  __  ____ _  __ _ ___ _   _ _  __  ____ 
+  /  \ |   |   /  \ |  | |  /  | |   |   | | /  \ |  | 
+  |  | |   |   |       | | /   | |   |   | | |       | 
+  |--| |   |-- \--\   /  |-    | |-- |   | | |      /  
+  |  | |   |      |  /   | \   | |   | | | | |     /   
+  |  | |__ |__ \__/ |__| |  \  | |__ |/ \| | \__/ |__| 
+_______________________________________________________
+_______________________________________________________
+```
+
+</div>
