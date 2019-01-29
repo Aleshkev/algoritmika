@@ -6,7 +6,7 @@ from shutil import *
 def gen(n=16, m=10):
     z = map(str, (randint(0, 10) for _ in range(n)))
     o = []
-    for i in range(m):
+    for _ in range(m):
         a = randrange(0, n)
         b = randrange(a, n)
         if random() < 0.5:
