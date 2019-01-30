@@ -8,10 +8,10 @@ template <typename T>
 ostream &operator<<(ostream &o, const vector<T> &v) {
   o << "[";
   for (auto i = v.begin(); i != v.end(); ++i) {
-    cout << *i;
-    if (i != prev(v.end())) cout << ", ";
+    o << *i;
+    if (i != prev(v.end())) o << ", ";
   }
-  cout << "]";
+  o << "]";
   return o;
 }
 
