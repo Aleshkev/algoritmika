@@ -33,7 +33,6 @@ struct real_tree {
     for_later.assign(2 * w, 0);
     active.assign(2 * w, false);
   }
-  void set(I qb, I qe, I rb, I re, I x) {}
 
   I get(I qb, I qe, I rb, I re, I i) {
     if (qe < rb || qb > re) return 0;
