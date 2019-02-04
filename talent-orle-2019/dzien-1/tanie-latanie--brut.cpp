@@ -2,8 +2,8 @@
 
 using namespace std;
 
-typedef intmax_t I;
-const I inf = 1e18;
+typedef int I;
+const I inf = 1e10;
 typedef pair<I, I> II;
 
 int main() {
@@ -13,7 +13,7 @@ int main() {
   I n, m;
   cin >> n >> m;
 
-  vector<map<I, I>> graph(n);
+  vector<unordered_map<I, I>> graph(n);
 
   for (I i = 0; i < m; ++i) {
     I a, b, c;
@@ -39,8 +39,9 @@ int main() {
       I minimal = inf;
       for (II i : graph[a]) {
         if (i.first == b) minimal = min(minimal, i.second);
-        if (graph[b].find(i.first) != graph[b].end()) {
-          minimal = min(minimal, i.second + graph[b][i.first]);
+        auto it = graph[b].find(i.first);
+        if (it != graph[b].end()) {
+          minimal = min(minimal, i.second + it->second);
         }
       }
       cout << (minimal < inf ? minimal : -1) << '\n';
