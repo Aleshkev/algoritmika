@@ -1,4 +1,6 @@
 *.exe
+a.in
+a.out
 b
 c
 .idea/
