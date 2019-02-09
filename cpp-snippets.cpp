@@ -27,6 +27,20 @@ I f_lower_bound(I lo, I hi, function<bool(I)> f) {
   return lo;
 }
 
+// Assumes first char is outside the alphabet.
+vector<I> get_mp(const string &s) {
+  I n = s.size() - 1;
+  vector<I> mp(n + 1);
+  mp[0] = -1;
+  for (I i = 1; i <= n; ++i) {
+    mp[i] = mp[i - 1] + 1;
+    while (mp[i] > 0 && s[mp[i]] != s[i]) {
+      mp[i] = mp[mp[i] - 1] + 1;
+    }
+  }
+  return mp;
+}
+
 // Takes string with first element being a placeholder, e.g. for "#abcabc"
 // returns [-1, 0, 0, 0, 1, 2, 3].
 vector<I> compute_mp(const string &a) {

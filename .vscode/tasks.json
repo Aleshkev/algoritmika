@@ -11,8 +11,13 @@
         "-g",
         "-std=c++11",
         "-Wall",
-        "${file}",
-        "-DUNITEST=true"
+        "-Wextra",
+        "-Wshadow",
+        "-Wfloat-equal",
+        "-DUNITEST=true",
+        "-D_GLIBCXX_DEBUG",
+        "-D_GLIBCXX_DEBUG_PEDANTIC",
+        "${file}"
       ],
     },
     {
