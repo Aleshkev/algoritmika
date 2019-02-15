@@ -1,0 +1,8 @@
+4.1:
+Zdyskwalifikowanych zostało 942 graczy.
+
+4.2:
+Maksymalny wynik to 265, ma go gracz nr 812.
+
+4.3:
+Największą liczbę następujących bezpośrednio po sobie pojedynczych ruchów w jednym wierszu planszy miał gracz 774. Liczba tych ruchów to 15.
