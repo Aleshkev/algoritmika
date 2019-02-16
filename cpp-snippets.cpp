@@ -41,19 +41,30 @@ vector<I> get_mp(const string &s) {
   return mp;
 }
 
-// Takes string with first element being a placeholder, e.g. for "#abcabc"
-// returns [-1, 0, 0, 0, 1, 2, 3].
-vector<I> compute_mp(const string &a) {
-  I n = a.size() - 1;
-  vector<I> mp(n + 1);
-  mp[0] = -1;
-  for (I i = 1; i <= n; ++i) {
-    mp[i] = mp[i - 1];
-    while (mp[i] > -1 && a[mp[i] + 1] != a[i]) mp[i] = mp[mp[i]];
-    ++mp[i];
+struct hash_model {
+  I p, q;
+  vector<I> q_pow;
+  hash_model(I p, I q, I max_n) : p(p), q(q) {
+    q_pow.resize(max_n);
+    q_pow[0] = 1;
+    for (I i = 1; i < max_n; ++i) q_pow[i] = q_pow[i - 1] * q % p;
   }
-  return mp;
-}
+
+  vector<I> make_hash(const string &s) {
+    I n = s.size();
+    vector<I> r(n);
+    r[0] = s[0] - '`';
+    for (I i = 1; i < n; ++i) r[i] = (r[i - 1] * q + s[i] - '`') % p;
+    return r;
+  }
+  I get_range(const vector<I> &r, I a, I b) {
+    if (a == 0) return r[b];
+    return (p + r[b] - r[a - 1] * q_pow[b - a + 1] % p) % p;
+  }
+  I with_char(const string &s, const vector<I> &r, I i, char c) {
+    return (p + r.back() + (c - s[i]) * q_pow[r.size() - i - 1] % p) % p;
+  }
+};
 
 // Test the functions.
 int main() {
