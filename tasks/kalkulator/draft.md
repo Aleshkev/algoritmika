@@ -30,6 +30,7 @@ Ponieważ wynik może być duży, a Bajtek nie lubi czytać dużych liczb, wysta
 </div>
 1 ℶ 1 = 2(1) + 1 = 3
 
+---
 
 <div class="example">
 
@@ -42,6 +43,7 @@ Ponieważ wynik może być duży, a Bajtek nie lubi czytać dużych liczb, wysta
 </div>
 1 ℶ 1 ℶ 1 ℶ 1 ℶ = ((1 ℶ 1) ℶ 1) ℶ 1 = (3 ℶ 1) ℶ 1 = 7 ℶ 1 = 15
 
+---
 
 <div class="example">
 
@@ -54,6 +56,7 @@ Ponieważ wynik może być duży, a Bajtek nie lubi czytać dużych liczb, wysta
 </div>
 (1 ℶ 1) ℶ (1 ℶ 1) = 3 ℶ 3 = 9
 
+---
 
 <div class="example">
 
@@ -65,6 +68,7 @@ Ponieważ wynik może być duży, a Bajtek nie lubi czytać dużych liczb, wysta
 ```
 </div>
 
+---
 
 <div class="example">
 
