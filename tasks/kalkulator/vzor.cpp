@@ -6,35 +6,34 @@ typedef intmax_t I;
 
 I mod = 1e9 + 7, n;
 string s;
+I i = 0;
 
-pair<I, I> expression(I i) {
+I expression() {
   if (isdigit(s[i])) {
     // Zjadamy liczbę.
     I number = 0;
     while (i < n && isdigit(s[i])) {
       number = (number * 10 + s[i++] - '0') % mod;
     }
-    return {number, i};
+    return number;
   }
 
   // Jeżeli nie liczbę, to zjadamy wyrażenie w nawiasie.
 
   assert(s[i] == '('), ++i;
 
-  I ans;
-  tie(ans, i) = expression(i);
+  I ans = expression();
 
   while (s[i] != ')') {
     assert(s[i] == '#'), ++i;
 
-    I x;
-    tie(x, i) = expression(i);
+    I x = expression();
     ans = (2 * ans + x) % mod;
   }
 
   assert(s[i] == ')'), ++i;
 
-  return {ans, i};
+  return ans;
 }
 
 int main() {
@@ -52,7 +51,7 @@ int main() {
   s += ")";
   n = s.size();
 
-  cout << expression(0).first << '\n';
+  cout << expression() << '\n';
 
 #ifdef UNITEST
   cout.flush();

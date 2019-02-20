@@ -92,33 +92,37 @@ Okazuje się, ża zachodzi następujący fakt:
   ```
 Więc można napisać łatwo funkcję parsującą takie wyrażenie:
 ```cpp
-pair<I, I> expression(I i) {
+I i = 0;
+
+I expression() {
   if (isdigit(s[i])) {
     // Zjadamy liczbę.
     I number = 0;
     while (i < n && isdigit(s[i])) {
       number = (number * 10 + s[i++] - '0') % mod;
     }
-    return {number, i};
+    return number;
   }
 
   // Jeżeli nie liczbę, to zjadamy wyrażenie w nawiasie.
+
   assert(s[i] == '('), ++i;
-  I ans;
-  tie(ans, i) = expression(i);
+
+  I ans = expression();
+
   while (s[i] != ')') {
     assert(s[i] == '#'), ++i;
 
-    I x;
-    tie(x, i) = expression(i);
+    I x = expression();
     ans = (2 * ans + x) % mod;
   }
+
   assert(s[i] == ')'), ++i;
 
-  return {ans, i};
+  return ans;
 }
 ```
-Jeżeli `s` to wejście z dodanymi nawiasami na początku i końcu i z usuniętymi białymi znakami, `expression(0).first` zwróci poprawny wynik.
+Jeżeli `s` to wejście z dodanymi nawiasami na początku i końcu i z usuniętymi białymi znakami, `expression()` zwróci poprawny wynik.
 
 ## Wzorcówka #2
 
