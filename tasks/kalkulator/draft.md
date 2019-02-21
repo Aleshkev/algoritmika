@@ -69,57 +69,42 @@ Ponieważ wynik może być duży, a Bajtek nie lubi czytać dużych liczb, wysta
 
 ```
 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2 # 2
-↑ 30 dwójek
 ```
 ```
 147483632
-↑ chyba, nie jestem pewien
 ```
 </div>
 
+*(przykład składa się z 30 dwójek)*
+
+
 ## Wzorcówka #1 (rekurencyjna)
 
-Okazuje się, ża zachodzi następujący fakt:
-- wyrażenie z wejścia spełnia taką gramatykę:
+Okazuje się, że wyrażenie z wejścia, jeżeli wsadzimy je całe w nawiasy dla pewności (`1 # 1` &rarr; `(1 # 1)`) spełnia następującą gramatykę:
   ```
   liczba := ["0" | "1" | ... | "9"]+
   wyrażenie := liczba | ["(" wyrażenie ["#" wyrażenie]* ")"]
   ```
-Więc można napisać łatwo funkcję parsującą takie wyrażenie:
-```cpp
-I i = 0;
+Więc można napisać łatwo funkcję parsującą takie wyrażenie (`vzor.cpp`).
 
-I expression() {
-  if (isdigit(s[i])) {
-    // Zjadamy liczbę.
-    I number = 0;
-    while (i < n && isdigit(s[i])) {
-      number = (number * 10 + s[i++] - '0') % mod;
-    }
-    return number;
-  }
-
-  // Jeżeli nie liczbę, to zjadamy wyrażenie w nawiasie.
-
-  assert(s[i] == '('), ++i;
-
-  I ans = expression();
-
-  while (s[i] != ')') {
-    assert(s[i] == '#'), ++i;
-
-    I x = expression();
-    ans = (2 * ans + x) % mod;
-  }
-
-  assert(s[i] == ')'), ++i;
-
-  return ans;
-}
-```
-Jeżeli `s` to wejście z dodanymi nawiasami na początku i końcu i z usuniętymi białymi znakami, `expression()` zwróci poprawny wynik.
-
-## Wzorcówka #2
+## Wzorcówka #2 (stos)
 
 Ogólnie prosty stos i można iść po kolei.
-$a \le b$
+
+## Sprytna wzorcówka w Pythonie
+
+Python, ponieważ jest dynamicznym językiem, umie interpretować podobne wyrażenia. Więc poniższy program rozwiązuje problem:
+
+```py
+import re
+
+class X(int):
+    def __add__(self, other):
+        return X((int(2 * self) + other) % (10 ** 9 + 7))
+
+e = input().replace('#', '+')
+e = re.sub("([0-9]+)", r"X(\1)", e)
+print(eval(e))
+```
+
+Na szczęście nie można przesyłać rozwiązań w Pythonie.
