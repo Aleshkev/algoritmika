@@ -28,9 +28,8 @@ Ponieważ wynik może być duży, a Bajtek nie lubi czytać dużych liczb, wysta
 3
 ```
 </div>
-1 ℶ 1 = 2(1) + 1 = 3
 
----
+*Wyjaśnienie:* 1 ℶ 1 = 2(1) + 1 = 3
 
 <div class="example">
 
@@ -41,9 +40,8 @@ Ponieważ wynik może być duży, a Bajtek nie lubi czytać dużych liczb, wysta
 15
 ```
 </div>
-1 ℶ 1 ℶ 1 ℶ 1 ℶ = ((1 ℶ 1) ℶ 1) ℶ 1 = (3 ℶ 1) ℶ 1 = 7 ℶ 1 = 15
 
----
+*Wyjaśnienie:* 1 ℶ 1 ℶ 1 ℶ 1 ℶ = ((1 ℶ 1) ℶ 1) ℶ 1 = (3 ℶ 1) ℶ 1 = 7 ℶ 1 = 15
 
 <div class="example">
 
@@ -54,9 +52,8 @@ Ponieważ wynik może być duży, a Bajtek nie lubi czytać dużych liczb, wysta
 9
 ```
 </div>
-(1 ℶ 1) ℶ (1 ℶ 1) = 3 ℶ 3 = 9
 
----
+*Wyjaśnienie:* (1 ℶ 1) ℶ (1 ℶ 1) = 3 ℶ 3 = 9
 
 <div class="example">
 
@@ -67,8 +64,6 @@ Ponieważ wynik może być duży, a Bajtek nie lubi czytać dużych liczb, wysta
 400
 ```
 </div>
-
----
 
 <div class="example">
 
@@ -127,3 +122,4 @@ Jeżeli `s` to wejście z dodanymi nawiasami na początku i końcu i z usunięty
 ## Wzorcówka #2
 
 Ogólnie prosty stos i można iść po kolei.
+$a \le b$
