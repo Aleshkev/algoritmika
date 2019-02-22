@@ -53,9 +53,5 @@ int main() {
 
   cout << expression() << '\n';
 
-#ifdef UNITEST
-  cout.flush();
-  system("pause");
-#endif
   return 0;
 }
