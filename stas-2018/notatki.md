@@ -1,7 +1,6 @@
 
 ### *Osobiste notatki, kumulują się tu błędy Stasia i mojego zrozumienia tematu w momencie ich pisania, a potem nie chce mi się ich poprawiać, więc jakość jest nie najlepsza.*
 
-
 Teksty
 ---
 *2018-11-23*
@@ -246,3 +245,32 @@ _______________________________________________________
 ```
 
 </div>
+
+## Teoria liczb
+
+*2019-02-22*
+
+- (Liczba dzielników liczby n) &le; <sup>3</sup>√n \
+  (Liczba dzielników liczby n) ≈ log n (ale może być mocno przekroczone o stałą)
+
+- rozszerzony alg. Euklidesa: dla każdej liczby pamięta jej NWD(b, mod) = 1 = x &middot; b + <del>y &middot; mod</del>, znajduje odwrotność
+
+- liczba &phi;: tocjent Eulera: żeby policzyć liczbę liczb względnie pierwszych z liczbą
+  1. &phi;(n) = liczba liczb względnie pierwszych z n mniejszych-równych n
+  2. &phi;(p) = p - 1 (p jest pierwsze)
+  3. &phi;(p<sup>k</sup>) = p<sup>k-1</sup> (p - 1)
+  4. &phi;(n &middot; m) = &phi;(n) &middot; &phi;(m) &hArr; NWD(n, m) = 1
+  5. $x = p_1^{\alpha_1} \cdot p_2^{\alpha_2}$ \
+    $\phi (x) = p_1 ^ {\alpha_1 - 1} (p_n - 1)$
+
+- funkcja Mobiusa:
+  1. &mu;(x) = 
+      - 1 &emsp; x=1
+      - 0 &emsp; x = p<sup>2</sup>k
+      - -1 &emsp; 2 ∤ L
+      - 1 &emsp; 2 ∣ L
+  2. &mu;(n) = &mu;(m) = &mu;(n &middot; m)
+  - *Zadanie Mały Las:* 
+
+- faktoryzacja w <sup>4</sup>√ (pamięć stała), probabilistyczne, funkcja losująca musi być deterministyczna: p ≈ √n. Funkcja losowa modulo p: x_1, x_2, x_3, ..., w końcu gdzieś wróci do poprzedniego x (zasada szufladkowa), mamy cykl, z paradoksu dnia urodzin ma on jakąś długość c ≈ √p ≈ <sup>4</sup>√n. Zakładamy, że x_n i x_i (jakieś do którego wróciło) są różne (mała szansa, że są)
+  - funkcja pseudolosowa: najprostsza funkcja wystarczająco pseudolosowa: `x^2 + c`, c = np. 17.
