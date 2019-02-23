@@ -1,12 +1,19 @@
+# Development
 *.exe
 a.in
 a.out
 b
 c
 .idea/
-
 draft/
 
+# task creation
+in/
+out/
+config.yml
+tasks/*/*.zip
+
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
