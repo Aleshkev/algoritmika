@@ -62,7 +62,6 @@ def add(group: int, in_str: str, out_str: Optional[str] = None, out_fn: Optional
     used[group] += 1
 
 
-
 add(0, "1 # 1")
 add(0, "1 # 1 # 1 # 1")
 add(0, "(1 # 1) # (1 # 1)")
@@ -110,7 +109,10 @@ for _ in range(8):
 for _ in range(8):
     add(3, generate(10**6 - 10**2, 10**2))
 
+# Długość dokładnie 2 * 10**6
 add(3, ''.join(random.choice(string.digits[1:]) for _ in range(2 * 10**6)))
+
+# Maksymalny poziom zagnieżdżenia
 add(3, '(' * (10**6 - 1) + '1' + ')' * (10 ** 6 - 1))
 
 
@@ -126,5 +128,6 @@ def auto_config(memory: int = 131072, time: int = 2000):
             s.append(f"    {i}{string.ascii_lowercase[j]}: {time}")
     s += ["points:", "    1: 20", "    2: 20", "    3: 60"]
     return "\n".join(s)
+
 
 pathlib.Path('config.yml').write_text(auto_config())
