@@ -103,7 +103,7 @@ add(2, generate(1, 1, word_generator([10 ** 6 - 1])))
 
 
 def auto_config(memory: int = 131072, time: int = 2000):
-    s = ["title: Kalkulator", "memory_limits:"]
+    s = ["title: Konstytucja", "memory_limits:"]
     for i in range(10):
         for j in range(used[i]):
             s.append(f"    {i}{string.ascii_lowercase[j]}: {memory}")
