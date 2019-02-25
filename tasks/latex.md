@@ -30,6 +30,10 @@ Włącz mikrotypografię. Mogą z nią być problemy jeżeli nie jest używany p
 ```tex
 \usepackage{microtype}
 ```
+Dla maksymalnego efektu, należy używać jej z kodowaniem T1 (działa wtedy kernowanie marginesów dla `„`).
+```tex
+\usepackage[T1]{polski}
+```
 
 Nie używaj `\newline` ani `\\` aby uzyskać odstępy – używaj `\medskip`. \
 `\par` prawie nigdy nie jest potrzebny.
