@@ -48,16 +48,18 @@ used = collections.defaultdict(lambda: 0)
 
 
 def add(group: int, in_str: str, out_str: Optional[str] = None, out_fn: Optional[Callable[[str], str]] = quick_solve):
+    in_str = in_str + '\n'
+
     if out_str:
         o = out_str
     else:
         o = out_fn(in_str)
 
     x = string.ascii_lowercase[used[group]]
-    (in_folder / f"klk{group}{x}.in").write_text(in_str)
-    (out_folder / f"klk{group}{x}.out").write_text(o)
+    (in_folder / f"klk{group}{x}.in").write_bytes(in_str.encode('ascii'))
+    (out_folder / f"klk{group}{x}.out").write_bytes(o.encode('ascii'))
 
-    print(overflow(in_str), f"[{len(in_str)}]", o.splitlines()[0])
+    print(overflow(repr(in_str)), f"[{len(in_str)}]", overflow(repr(o)))
 
     used[group] += 1
 
