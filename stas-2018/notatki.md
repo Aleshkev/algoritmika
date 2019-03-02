@@ -273,4 +273,22 @@ _______________________________________________________
   - *Zadanie Mały Las:* 
 
 - faktoryzacja w <sup>4</sup>√ (pamięć stała), probabilistyczne, funkcja losująca musi być deterministyczna: p ≈ √n. Funkcja losowa modulo p: x_1, x_2, x_3, ..., w końcu gdzieś wróci do poprzedniego x (zasada szufladkowa), mamy cykl, z paradoksu dnia urodzin ma on jakąś długość c ≈ √p ≈ <sup>4</sup>√n. Zakładamy, że x_n i x_i (jakieś do którego wróciło) są różne (mała szansa, że są)
-  - funkcja pseudolosowa: najprostsza funkcja wystarczająco pseudolosowa: `x^2 + c`, c = np. 17.
+  - najprostsza funkcja wystarczająco pseudolosowa: `x^2 + c`, c = np. 17.
+
+
+## 2-SAT
+
+*2019-03-01*
+
+- SAT
+- k-SAT – w każdej formule dokładnie k zmiennych
+- 2-SAT: da się zrobić dzięki temu, że $(x_1 \vee x_2) \Leftrightarrow ((\neg x_1 \Rightarrow x_2) \wedge (\neg x_2 \Rightarrow x_1))$.
+
+  Robimy graf: wierzchołek $x_i$ oraz $\neg x_i$ dla każdego $1 \le i \le n$. Każda formuła to dwie krawędzie. Chcemy przydzielić każdemu wierzchołkowi 0 lub 1. Sprowadzamy graf do DAG (wewnątrz jednej silnie spójnej wszystkie wierzchołki muszą mieć tę samą wartość, inaczej da się przejść jakoś z 1 do 0, sprzeczność). Dla każdego wierzchołka sprawdzamy czy on i jego przeciwieństwo są w tej samej silnej spójnej, jeżeli tak to nie ma rozwiązania. Mamy DAG, którego można w łatwy i przyjemny sposób pokolorować.
+
+  Przykład sprzeczności: gdy w grafie wyjdzie $\neg x_0 \rightarrow x_0 \rightarrow x_1 \rightarrow \neg x_1$. Ta sprzeczność jednak tak naprawdę nie istnieje, bo musi być krawędź $\neg x_1 \rightarrow \neg x_0$, a wtedy jest to jedna spójna, więc ten przypadek był już rozważony.
+
+
+## Geometria
+
+*na następnym kółku*
