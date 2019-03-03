@@ -1,0 +1,43 @@
+\author{Jonasz Aleszkiewicz}
+
+\documentclass{sinol}
+\usepackage[T1]{polski}
+\usepackage{microtype}
+
+\title{Kalkulator}
+\RAM{128}
+\date{2019-03-02}
+\konkurs{PreMOI}
+\id{klk}
+
+\begin{document}
+\begin{tasktext}
+
+Bajtek wymyślił innowacyjną nową operację między dwoma liczbami: $a \otimes b = 2a + b$. Łączy się ona w lewo, czyli $a \otimes b \otimes c = (a \otimes b) \otimes c$.
+
+Bajtek nie zna jeszcze dokładnych zastosowań, ale chciałby już teraz mieć program, który policzy wynik dla dowolnego wyrażenia składającego się z dowolnie dużych nieujemnych liczb, nawiasów i jego operacji. Ponieważ C++ nie przewidział $\otimes$, na wejściu ten operator zostanie przedstawiony jako \texttt{\#}.
+
+Ponieważ wynik może być duży, a Bajtek nie lubi czytać dużych liczb, wystarczy mu wynik modulo $10^9 + 7$.
+
+\medskip
+
+\section{Wejście}
+
+Na jedynej linii wejścia jest poprawne wyrażenie, którego wynik interesuje Bajtka. Wszystkie spacje zawsze mogą być pominięte. Długość linii (licząc ze spacjami) nie przekroczy $2 \cdot 10^6$.
+
+\medskip
+
+\section{Przykłady}
+
+\makeexample{0a}
+\textit{Wyjaśnienie:} $1 \otimes 1 = 2(1) + 1 = 3$
+
+\makeexample{0b}
+\textit{Wyjaśnienie:} $1 \otimes 1 \otimes 1 \otimes 1 \otimes = ((1 \otimes 1) \otimes 1) \otimes 1 = (3 \otimes 1) \otimes 1 = 7 \otimes 1 = 15$
+
+\makeexample{0c}
+\textit{Wyjaśnienie:} $(1 \otimes 1) \otimes (1 \otimes 1) = 3 \otimes 3 = 9$
+
+\makeexample{0d}
+\end{tasktext}
+\end{document}

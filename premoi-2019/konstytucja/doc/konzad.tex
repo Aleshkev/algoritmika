@@ -1,0 +1,56 @@
+\author{Jonasz Aleszkiewicz}
+
+\documentclass{sinol}
+\usepackage{microtype}
+
+\title{Konstytucja}
+\RAM{128}
+\date{2019-03-02}
+\konkurs{PreMOI}
+\id{kon}
+
+\begin{document}
+\begin{tasktext}
+
+Po upadku zbrodniczego reżimu, wszystkie siły starego i nowego porządku zebrały się, aby ułożyć  konstytucję dla nowo powstałego ustroju. Oparta na ideałach demokracji, ma być najważniejszym dokumentem w państwie.  Dlatego zarówno stary jak i nowy porządek bardzo chcą mieć czym się pochwalić po ukończonych negocjacjach.
+
+Nie wiadomo jednak dokładnie czego żadna ze stron chce. Jedyne co można wywnioskować z ich ogólnikowych populistycznych wypowiedzi to to, że ma to jakiś związek z najmniejszymi i największymi leksykograficznie słowami.
+
+Służba cywilna postanowiła pomóc w negocjacjach poprzez napisanie programu znajdującego dla każdego wiersza konstytucji najmniejsze i największe leksykograficznie słowo.  Niestety, od czasu zamachu na Ministra Finansów niemożliwe jest przydzielenie na to zadanie budżetu.  Dlatego teraz Ty jesteś jedyną nadzieją narodu -- napisz taki program.
+
+\medskip
+
+\section{Wejście}
+
+Na wejściu podana jest dowolna ilość linii, każda z nich odpowiadająca jednemu wierszowi konstytucji. Każdy wiersz składa się ze słów, znaków interpunkcyjnych ze zbioru \texttt{?!.;'"\&()} oraz liczb. Słowo definiujemy jako spójny ciąg małych lub dużych liter alfabetu łacińskiego o maksymalnej możliwej długości.  Zauważ, że w szczególności między słowami może być tylko znak interpunkcyjny, np. \texttt{K\&R C} to trzy słowa. Ostatni wiersz wejścia jest pusty.
+
+Sumaryczna liczba znaków na wejściu nie przekroczy $10^6$.
+
+\medskip
+
+\section{Wyjście}
+
+Dla każdej linii wejścia, program powinien wypisać najmniejsze i największe leksykograficznie słowo jakie pojawiło się w danej linii.  Przy porównywaniu pomijamy wielkość liter: nie ma tak, że dzielimy je na małe i~duże.  Jeżeli jedno słowo jest prefiksem drugiego, jest od niego mniejsze leksykograficznie, np. \texttt{Java} $<$ \texttt{JavaScript}. Jeżeli kilka słów ma taką samą kolejność leksykograficzną, program powinien wypisać to, które wystąpiło najwcześniej w danej linii.
+
+\medskip
+
+\section{Przykłady}
+
+\makeexample{0a}
+
+% Wierząc, że IV Rzeczpospolita powstanie
+% Z realnych planów i pięknych snów,
+% Chcemy wypełnić konsekwentnie swe zadanie
+% Znając znaczenie prostych słów:
+%
+% Prawda. Wiara. Żarliwość.
+% Piękno. Praca. Ofiarność.
+% Prawo i Sprawiedliwość.
+% Polska i Solidarność.
+\makeexample{0b}
+
+\makeexample{0c}
+\textit{Wyjaśnienie do przykładu:} słowa \texttt{Konstytucja} i \texttt{konstytucja} są równe leksykograficznie przy pomijaniu wielkości liter, więc wynikiem jest to z nich, które wcześniej wystąpiło w danej linii.
+
+\end{tasktext}
+\end{document}
