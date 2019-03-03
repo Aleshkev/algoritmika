@@ -13,6 +13,13 @@ out/
 config.yml
 tasks/*/*.zip
 
+# LaTeX
+__latexindent_temp.tex
+*.aux
+*.fls
+*.log
+*.fdb_latexmk
+
 # Python
 __pycache__/
 *.py[cod]
