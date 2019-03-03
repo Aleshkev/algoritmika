@@ -28,8 +28,8 @@
         "-g",
         "-std=c++11",
         "-Wall",
-        "${file}",
-        "-DUNITEST=true"
+        "-O2",
+        "${file}"
       ],
       "group": {
         "kind": "build",
