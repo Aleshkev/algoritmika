@@ -27,7 +27,7 @@ Every contest I took part in has its own directory. I usually throw away all non
 
 ## License
 
-My code (all .cpp and .py files) are available under MIT License.
+My code (all .cpp and .py files, .tex files unless otherwise noted) are available under MIT License.
 
 ## .vscode technicalities
 
