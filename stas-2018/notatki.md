@@ -291,4 +291,17 @@ _______________________________________________________
 
 ## Geometria
 
-*na następnym kółku*
+*2019-03-08*
+
+- proste: $f(x) = ax + b$; nie działa na prostej pionowej, trzeba ją `if`ować. Dlatego zamiast tego jest drugi wzór, $ax + by + c = 0$
+- iloczyn wektorowy = pole skierowane
+  - z iloczynu wektorowego można ≈uzyskać kąt między wektorami: $a \times b = xy \sin \alpha$: jest to dwuznaczne, trzeba jeszcze użyć cosinusa
+- iloczyn skalarny: $(x_1, y_1) \times (x_2, y_2) = I = x_1x_2 + y_1y_2 = xy \cos \alpha$
+  - jeżeli jest kąt prosty, wychodzi 0
+- sortowanie kątowe
+- `atan2`: obliczenie kąta między $(a, b), (0, 0)$ a podstawą współrzędnych.
+- otoczka wypukła, bez sortowania kątowego
+- zamiatanie drzewem przedziałowym (pominięte)
+- liczenie pola trójkąta: iloczynem wektorowym
+- liczenie pola dowolnego wielokąta (również wklęsłego): suma pola skierowanego dla każdego trójkąta z boku X do punktu P = pole wielokąta
+- sprawdzenie czy punkt jest w wielokącie
