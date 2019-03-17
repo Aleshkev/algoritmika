@@ -1,5 +1,5 @@
 
-### *Osobiste notatki, kumulują się tu błędy Stasia i mojego zrozumienia tematu w momencie ich pisania, a potem nie chce mi się ich poprawiać, więc jakość jest nie najlepsza.*
+### *Osobiste notatki, kumulują się tu błędy Stasia i mojego zrozumienia tematu w momencie ich pisania, a potem nie chce mi się ich poprawiać, więc jakość jest nie najlepsza.* 
 
 Teksty
 ---
@@ -305,3 +305,8 @@ _______________________________________________________
 - liczenie pola trójkąta: iloczynem wektorowym
 - liczenie pola dowolnego wielokąta (również wklęsłego): suma pola skierowanego dla każdego trójkąta z boku X do punktu P = pole wielokąta
 - sprawdzenie czy punkt jest w wielokącie
+
+
+## Macierze
+
+*2018-03-15*
