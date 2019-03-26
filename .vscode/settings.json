@@ -58,6 +58,7 @@
     "typeindex": "cpp",
     "typeinfo": "cpp"
   },
+  "C_Cpp.intelliSenseCachePath": "C:/uselesscache/",
   "C_Cpp.clang_format_fallbackStyle": "Google",
   "editor.detectIndentation": false,
   "editor.tabSize": 2,
