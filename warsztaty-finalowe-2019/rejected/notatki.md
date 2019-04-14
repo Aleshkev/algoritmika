@@ -42,3 +42,69 @@ Dzień III
 
 - *Wydobycie*
 - *Wirusy:* PRzeżyją zawsze tylko te które mają nap ierwszym miejscu swój nr
+
+Dzień V
+
+- *Koraliki:* dwa warunki
+
+    dynamik, 4 stany: mamy wierzchołek, krawędź wychodzącą do góry, krawędź wychodząca do góry jest czerwona albo niebieska, jest niesparowana. Jeśli byśmy parowali te kraw z czyms wyzszcym, drugi koniec bylby niebieski
+    1* 
+    2* też jest niesparowana, ale do gory jest czarny koniec
+    3* sparowana, koniec jest w niebieskich 
+    4* też jest sparowana, koniec jest czarny
+    ten dynamik [i <= 4] jest maxem stanów 1..i, np. d[4] = max(d[1], d[2], d[3], d[4])
+    popatrzmy jak stany zaleza od siebie
+    że w stanie 1:
+      koniec bedzie niebieski jesli nie bedzi jakby warunek czwartego stanu, bo jesli bylby war 4 stanu, to bylaby krawedz, spar 2 kraw kt maja koniec czarny. Tutaj bierzemy sume po dyn 3 z dzieci
+    stan 2: w 2 stanie moze byc dalej czarna, nasz wierzch moze byc czarny: sa dwie opcje ze wierzch j czarn, 1: wchodzi krawedz o wierzhc
+    wchodzi krawedz o konc czarn 
+    mielibysmy tu syt w naszej obserw, tu musi wchodzić 3 stan
+    max wyn z (stan[4] , do reszty stan[3])
+    2: tu sa takie sparowane kraw miedzy dziecmi, kraw musza byc nieb, z jednej strony moze wchodzic nieb a zdrugiej czarny
+    3*: parujemy sobie ja do gory to wtedy na pewno nie moze wchodzi 4 ale moze wchodzic 3
+    a tutaj musi wchodzic 1 zeby war z 3
+    max w 4 to max z czegos takiego ...
+
+- Kupiec (cykle)
+  tresc jest taka ze jest 100 miast 9900 jednokierunkowych polaczen, kazde pol jest jednokierunkowe, ma wage, ona jest do 10^7, a jest tez tak ze pomiedzy dwoma miastami w jednym kierunku jest co najwyzej jedna krawedz
+  Jest k produktow, k do 1000. Kazde miasto dla kazdego prod ma cene kupna i sprzedazy, wazny warunek: cena kupna > cena sprzedazy
+  Kupiec ma plecak z co najwyzej 1 przedm naraz, chodzi sobie po krawedziach
+  Robi operacje kupna i sprzedazy, ile ich che
+  ... [treść]
+
+  mamy zdef efektywność cyklu, jeżeli w grafie mamy taki cykl, mamy wiedze ze jest start. wierzch i oprocz tego ze wybieramy jakis cykl, wybieramy co bedzie robil
+  efektywnosc = zysk / dlugosc
+
+  mamy wyznaczyc najw czesc calkowita jaka moze miec efektywnosc
+
+  tkie zadania robi sie Floyd-Warshallem, ale tu byloby za duzo wierzchołków (gdzie jesteśmy * co mamy w plecaku, n * k, jeszcze do trzeciej bo to Floyd Warshall).
+
+  jak rozw jest cykl nieprosty, zawsze oplaca sie wziac jakas jego czesc
+  jak mamy cykl to kupuje cos wczesniej niz sprzedaje
+  zach tablice inc[a][b] - ile najwiecej mozna zarobic kup w miescie a i sprzed w b
+  jezeli wybierzemy a i b, typ przedmiotu nas nie obchodzi
+  preprocesujemy to na poczatku, O(n^2 k)
+
+  pozbywamy sie k w ogóle 
+
+  zrobmy sobei druga tablice, odl[a][b] - min odleglosc na sciezce od a do b, liczymy w O(n^3)
+
+  wiemy ze cykl rozw. sklada sie z czesci "kupujemy w a - sprzedajemy w b", pomiedzy a i b idziemy najkrotsza trasa
+  wynik mozna wiec binsearchowac po wyniku
+  
+  mamy zysk/odl, sprawdzmy czy umiemy uzyskac iloraz >= x
+  zys >= odl * x
+  zysk - odl * x >= 0
+  Wymnozymy odleglosci miedzy miastami *x, szukamy czy jest cykl o dodatniej sumie
+  odwracamy znaki, sprawdzamy czy jest ujemny cykl
+
+- *Skok:* mamy ukryta tab, ...
+
+  Dzielimy na n części, jakoś wychodzi 2. subtask
+
+  Zadanie podobne:
+  184.MAX GAP
+  leet.com
+
+  bajtem.pl
+  

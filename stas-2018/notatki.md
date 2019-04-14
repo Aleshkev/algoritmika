@@ -310,3 +310,10 @@ _______________________________________________________
 ## Macierze
 
 *2018-03-15*
+
+
+## Różności, rzeczy implementacyjne
+
+- większy skill klepacki przydaje się jak jest coś nietrywialnego do sklepania
+- komunistyczna polityka Kubina "zrób wszystko publiczne to nie trzeba będzie się niczym przejmować"
+- własne dobre double dzięki trzymaniu $10^k \cdot r$ gdzie $k$ jest `int`em a $r$ `long double`m, działają dobrze gdy wynik $\in [0, 1]$
