@@ -317,3 +317,12 @@ _______________________________________________________
 - większy skill klepacki przydaje się jak jest coś nietrywialnego do sklepania
 - komunistyczna polityka Kubina "zrób wszystko publiczne to nie trzeba będzie się niczym przejmować"
 - własne dobre double dzięki trzymaniu $10^k \cdot r$ gdzie $k$ jest `int`em a $r$ `long double`m, działają dobrze gdy wynik $\in [0, 1]$
+
+
+## Skojarzenia
+
+*2019-04-26*
+
+Będzie teoretycznie bo jest mało zadanek.
+
+- zad: podać przykład grafu gdzie wszystkie wierzchołki mają stopień 3 i nie ma skojarzenia doskonałego
