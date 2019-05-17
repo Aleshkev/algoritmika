@@ -326,3 +326,41 @@ _______________________________________________________
 Będzie teoretycznie bo jest mało zadanek.
 
 - zad: podać przykład grafu gdzie wszystkie wierzchołki mają stopień 3 i nie ma skojarzenia doskonałego
+
+## Algorytmy randomizowane
+
+najw klika w grafie, ale graf jest specyficzny: dla każdego wierzchołka możemy odpalić f(v), które zmieni graf w graf tylko z krawędziami które są na klice. Można znalezc klikę puszczając to dla kżdego wierzch w O(nF), F = złożoność f(v). Chcemy z tego zrobić funkcję liniową. Jeszcze jedno magiczne założenie: klika jest wielkości co najmniej 1/5 grafu. Można wtedy wybrać losowe $n$ wierzch i za każdym razem jest 4/5 szansy że wierzchołek nie będzie na klice, więc szansa że nie będzie odpowiedzi to $(\frac{4}{5})^n$; $n$ = log_4/5 * 1/2*10^8
+
+Żeby policzyć odpowiednie $n$:
+
+$$\log_\frac{4}{5} \frac{1}{2\cdot10^8} = n$$
+
+
+pkty na płaszczyznie, mamy znalezc prosta zawierajaca co najmniej n/2 punktów lub stwierdzic że takiej nie ma. Losujemy pary punktów, liczymy ile pktów ma prosta między nimi, prawdopodobieństwo że jest dobrze to 1/4, bo pktów na tej prostej pesymistycznie jest n/4. Jeżeli przez 60 prób nic się nie znajdzie, pewnie nie ma takiej prostej.
+
+Algorytmy las vegas i monte carlo
+
+monte carlo – metoda działa dokładnie określoną liczbę czasu i z pewnym prawdopodobieństwem zwraca dobry wynik, np. hasze; np. przybliżanie $\pi$ przez losowanie punktów w kwadracie
+
+las vegas – zwraca dobry wynik ale niekoniecznie w skończonym czasie. nas będą tkie interesowały, po prostu jak się skończy czas stwierdzamy, że nie ma takiej odpowiedzi.
+
+mamy daną tablicę zer i jedynek, znajdź szybko jakieś 0. Normalnie idziemy po tablicy, może być test gdzie są same jedynki i potem same zera, random_shuffle rozw problem i jest fajnie szybko. bellman-ford można też tym zoptymalizować i jest coś nieporównywalnie szybszego, prawie szybkie jak Dijkstra.
+
+istnieją biblioteczki adapcyjne, które się przystosowują do zapytań :O
+CF na sylwestra?
+
+znaleźć najmniejszy okrąg opisujący punkty. Środek ciężkości nie działa. Alg liniowy istnieje, ale jest trudny. Zastanównmy się nad algorytmem w $O(n^3)$. Bierzemy pkt, wyrzucamy go, rekurencyjnie odpalamy dla pktów bez tego i znajdujemy jakiś okrąg. Opcja #1: pkt jest wewnątrz okręgu, mamy wynik. Opcja #2: zapamiętujemy, że on leży na krawędzi, i już więcej go nie wyrzucimy. Odpalamy od nowa, inny punkt wyrzucamy, możliwe że go wyrzucamy, tak samo dla 3 pktów. Jeżeli znajdujemy 3 pkty na krawędzi, mamy okrąg deterministycznie w $O(n^3)$ :O
+
+(Schodzimy od początku aż trafimy na 1 punkt na krawędzi, jeżeli dojdziemy do końca, restartujemy do ostatnio znalezionego punktu na krawędzi.) Chcemy więc w jak najmniejszym zbiorze znajdywać punkty na krawędzi.
+
+Ścieżka dł k gdzie $k \approx \log n$. Kolorujemy na k kolorków
+
+### Zadanka optymalizacyjne
+
+zad z IOI: mamy planszę, pola, na niektórych polach są krzaki, chcemy jak najfajniejszy labirynt,: fajność = bierzemy największą spójną w labiryncie i ile tam jest liści. 
+
+żarzanie: mamy wynik i idziemy w losowych kierunkach, wybieramy ten najlepszy. Czasami robimy specjalnie błąd żeby wyjsć z lokalnego maksimum.
+
+`rand()` jest zły, lepiej `rand() * RAND_MAX + rand()` (+ jakieś stałe)
+
+Żeby niepraktycznie sprawdzić czy dwa słowa są cykliczne można każdej literze alfabetu przyporządkować losową macierz 3x3. Jeżeli iloczyn macierzy obu słów jest taki sam, słowa są równe. Bardzo duża szansa działania, świetna sztuczka.
