@@ -364,3 +364,86 @@ zad z IOI: mamy planszę, pola, na niektórych polach są krzaki, chcemy jak naj
 `rand()` jest zły, lepiej `rand() * RAND_MAX + rand()` (+ jakieś stałe)
 
 Żeby niepraktycznie sprawdzić czy dwa słowa są cykliczne można każdej literze alfabetu przyporządkować losową macierz 3x3. Jeżeli iloczyn macierzy obu słów jest taki sam, słowa są równe. Bardzo duża szansa działania, świetna sztuczka.
+
+## Automaty sufiksowe
+
+Automat – generuje wszystkie słowa w słowniku.
+
+Automat sufiksowy to taki DAG z literami na krawędziach. W każdym wierzchołku można (żeby zrozumieć) trzymać maskę bitową: do których pozycji w słowie można dojść, przechodząc przez automat z korzenia do wierzchołka. Oraz stringi: wszystkie słowa, które można skonstruować dochodząc do tego wierzchołka.
+
+Intuicje:
+- mogą istnieć w tym samym automacie maski 0110 i 1000 (ABBC)
+- mogą istnieć 0110 i 0010 (`_BB_`)
+- nie mogą istnieć 0110 i 1100 – dwie maski nie mogą się przecinać
+- czy w grafie może być wierzchołek mający w sobie stringi XYZ, YZ, bez kolejnych jak Z? tak, np. XYZZ: XYZ ma maskę 0010, YZ 0010, Z ma 0011, a inna maska implikuje inny wierzchołek
+- czy może być wierzchołek XYZ, Z? 
+
+
+Czerwone krawędzie prowadzą z maski do najmniejszej ze względu na ilość bitów maski, która ją zawiera. Jest jedna taka maska (ponieważ dwie maski nie mogą się przecinać). Symbolizuje więc uciecie liter z początku?
+
+W tym grafie wierzchołków będzie liniowo wiele od wierzchołków słowa
+
+### Tworzenie grafu
+
+Idziemy online, z każdą nową literką poprawiając graf.
+
+Aktualizujemy idąc od wierzchołków z ostatnim bitem `...1`, po czerwonych krawędziach, do korzenia.
+
+Wszystkie sufiksy słowa są trójkątem prostokątnym.
+
+[...] Zrozumienie reszty algorytmu jest trywialne dla uważnego czytelnika.
+
+soko na CF na blogu ma implementację
+
+```cpp
+struct suffix_automaton {
+  vector<map<char, int>> edges;
+  vector<int> link;    // czerwone krawędzie
+  vector<int> length;  // wartość w kółeczkach
+  int last;
+  // To nam wystarczy do trzymania całego grafu.
+
+  suffix_automaton(string s) {
+    edges.push_back({});
+    link.push_back(-2);
+    length.push_back(0);
+    last = 0;
+
+    for (int i = 0; i < s.size(); ++i) {
+      edges.push_back({});
+      link.push_back(-1);
+      length.push_back(i + 1);
+      int r = edges.size() - 1;
+      int p = last;
+      while (p >= 0 && edges[p].find(s[i]) == edges[p].end()) {
+        // ^^^ Tam było edges, nie edges[p], ale chyba o to chodziło.
+
+        edges[p][s[i]] = r;
+        p = link[p];
+      }
+
+      if (p != -1) {
+        int q = edges[p][s[i]];
+        if (length[q] == length[p] + 1) {
+          link[r] = q;
+        } else {
+          edges.push_back(edges[q]);
+          length.push_back(length[p] + 1);
+          link.push_back(link[q]);
+          int qq = edges.size() - 1;
+          link[q] = qq;
+          link[r] = qq;
+          while (p >= 0 && edges[p][s[i]] == q) {
+            edges[p][s[i]] = qq;
+            p = link[p];
+          }
+          last = r;
+        }
+      }
+    }
+  }
+};
+```
+
+
+
