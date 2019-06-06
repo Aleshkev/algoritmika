@@ -1,5 +1,7 @@
 
-### *Osobiste notatki, kumulują się tu błędy Stasia i mojego zrozumienia tematu w momencie ich pisania, a potem nie chce mi się ich poprawiać, więc jakość jest nie najlepsza.* 
+### *Osobiste notatki, kumulują się tu błędy Stasia i mojego zrozumienia tematu w momencie ich pisania, a potem nie chce mi się ich poprawiać, więc jakość jest nie najlepsza.*
+
+### *Notatki mogą być czytane z wyrenderowaną matematyką [tutaj](https://aleshkev.github.io/md-preview/?p=https://raw.githubusercontent.com/Aleshkev/algoritmika/master/stas-2018/notatki.md).*
 
 Teksty
 ---
