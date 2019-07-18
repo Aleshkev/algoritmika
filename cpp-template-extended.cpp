@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
 typedef intmax_t I;
 const I inf = 1e18;
 typedef pair<I, I> II;
