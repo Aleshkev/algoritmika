@@ -15,8 +15,8 @@
         "-Wshadow",
         "-Wfloat-equal",
         "-DUNITEST=true",
-        // "-D_GLIBCXX_DEBUG",
-        // "-D_GLIBCXX_DEBUG_PEDANTIC",
+        "-D_GLIBCXX_DEBUG",
+        "-D_GLIBCXX_DEBUG_PEDANTIC",
         "${file}"
       ],
     },

@@ -56,7 +56,13 @@
     "thread": "cpp",
     "type_traits": "cpp",
     "typeindex": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "charconv": "cpp",
+    "codecvt": "cpp",
+    "cuchar": "cpp",
+    "optional": "cpp",
+    "shared_mutex": "cpp",
+    "string_view": "cpp"
   },
   "C_Cpp.intelliSenseCachePath": "C:/uselesscache/",
   "C_Cpp.clang_format_fallbackStyle": "Google",
@@ -77,4 +83,5 @@
   "python.linting.pylintArgs": [
     "--disable=W0614,W0401,C0111,C0103"
   ],
+  "files.insertFinalNewline": true,
 }
