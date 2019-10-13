@@ -2,14 +2,11 @@
   "configurations": [
     {
       "includePath": [],
-      "name": "Win32",
-      "defines": [
-        "_DEBUG",
-        "UNICODE",
-        "UNITEST"
       ],
       "compilerPath": "gcc.exe",
-      "cppStandard": "c++11",
+      "name": "Win32",
+      "defines": ["_DEBUG", "UNICODE", "UNITEST"],
+      "cppStandard": "c++17",
       "intelliSenseMode": "gcc-x64"
     }
   ],

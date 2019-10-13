@@ -62,7 +62,15 @@
     "cuchar": "cpp",
     "optional": "cpp",
     "shared_mutex": "cpp",
-    "string_view": "cpp"
+    "string_view": "cpp",
+    "algorithm": "cpp",
+    "iterator": "cpp",
+    "map": "cpp",
+    "memory_resource": "cpp",
+    "random": "cpp",
+    "regex": "cpp",
+    "set": "cpp",
+    "string": "cpp"
   },
   "C_Cpp.intelliSenseCachePath": "C:/uselesscache/",
   "C_Cpp.clang_format_fallbackStyle": "Google",
@@ -71,17 +79,8 @@
   "[python]": {
     "editor.tabSize": 4
   },
-  "editor.formatOnSave": true,
-  "cSpell.words": [
-    "coleynosc",
-    "fajności",
-    "fajność",
-    "faynosc",
-    "undiv"
-  ],
   "editor.acceptSuggestionOnCommitCharacter": false,
-  "python.linting.pylintArgs": [
-    "--disable=W0614,W0401,C0111,C0103"
-  ],
+  "python.linting.pylintArgs": ["--disable=W0614,W0401,C0111,C0103"],
   "files.insertFinalNewline": true,
+  "editor.formatOnSave": true
 }

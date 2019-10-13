@@ -9,28 +9,25 @@
       "command": "g++",
       "args": [
         "-g",
-        "-std=c++11",
+        "-std=c++17",
         "-Wall",
         "-Wextra",
         "-Wshadow",
+        "-Wconversion",
+        "-Wno-sign-conversion",
+        // "-fsanitize=undefined",
         "-Wfloat-equal",
         "-DUNITEST=true",
         "-D_GLIBCXX_DEBUG",
         "-D_GLIBCXX_DEBUG_PEDANTIC",
         "${file}"
-      ],
+      ]
     },
     {
       "label": "g++ release",
       "type": "shell",
       "command": "g++",
-      "args": [
-        "-g",
-        "-std=c++11",
-        "-Wall",
-        "-O2",
-        "${file}"
-      ],
+      "args": ["-g", "-std=c++11", "-Wall", "-O2", "${file}"],
       "group": {
         "kind": "build",
         "isDefault": true
