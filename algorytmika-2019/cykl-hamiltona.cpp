@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef intmax_t I;
+const I inf = 1e18;
 
 int main() {
   ios_base::sync_with_stdio(false);
