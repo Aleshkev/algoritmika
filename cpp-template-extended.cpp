@@ -9,16 +9,23 @@ template <typename T>
 ostream &operator<<(ostream &o, const vector<T> &v) {
   o << "[";
   for (auto i = v.begin(); i != v.end(); ++i) {
+    if (i != v.begin()) o << ", ";
     o << *i;
-    if (i != prev(v.end())) o << ", ";
   }
-  o << "]";
-  return o;
+  return o << "]";
+}
+template <typename T, typename U>
+ostream &operator<<(ostream &o, const map<T, U> &v) {
+  o << "{";
+  for (auto i = v.begin(); i != v.end(); ++i) {
+    if (i != v.begin()) o << ", ";
+    o << i->first << ": " << i->second;
+  }
+  return o << "}";
 }
 template <typename T, typename U>
 ostream &operator<<(ostream &o, pair<T, U> p) {
-  o << "(" << p.first << ", " << p.second << ")";
-  return o;
+  return o << "(" << p.first << ", " << p.second << ")";
 }
 
 int main() {

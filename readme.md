@@ -9,7 +9,7 @@ It is a repository where I put most of my solutions for various competitive prog
 > If you look at someone else's code, you must analyze and understand it.
 > When you are sure you know how everything works, don't look at this code again and write your own from scratch.
 >
-> <cite>*— Mr Daniel Olkowski*
+> <cite>_— Mr Daniel Olkowski_
 
 Please don't use these solutions for evil. Do not use them to cheat. Do not steal them without attribution (see [license](#license) slightly below).
 
@@ -35,9 +35,10 @@ After long battles with backward-progressive Code::Blocks "IDE", I switched to l
 
 The difficulty of setup is the reason I decided to just put my `.vscode` folder in the repository.
 
-But I like the resulting configuration, where I can just compile *any* C++ file immediately, and even debug it with the amazing VS Code debugging experience.
+But I like the resulting configuration, where I can just compile _any_ C++ file immediately, and even debug it with the amazing VS Code debugging experience.
 
 Problems with this configuration:
+
 1. Files are recompiled, even if they didn't change from one run to the next.
 2. To make program stop at the end of execution, `system("pause");` or breakpoint is needed. The problem with first option is that if executable is called with output redirected to file, "Press any key to continue. . ." will be saved too. The second option won't allow to, well, press any key to close the window; Ctrl+C or Alt+F4 will just raise an error in debugger. Code::Blocks uses custom runner which inserts the pause after execution. Maybe it would be possible to create custom runner which also solves the first problem too?
 
