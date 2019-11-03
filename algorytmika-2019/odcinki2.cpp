@@ -3,15 +3,10 @@ using namespace std;
 typedef intmax_t I;
 
 struct pkx {
-  I p = 0, k = 0, x = 0;
-
-  // Nie rozumiem czemu na SIO2 nie chce się to skompilować:
-  //   return {0, 0, 0};
-  pkx() : p(0), k(0), x(0) {}
-  pkx(I p, I k, I x) : p(p), k(k), x(x) {}
+  I p, k, x;
 };
 pkx operator*(const pkx &a, const pkx &b) {
-  return pkx(a.p + b.p, a.k + b.k, a.x + b.x + a.p * b.k);
+  return {a.p + b.p, a.k + b.k, a.x + b.x + a.p * b.k};
 }
 
 struct point_tree {
@@ -30,7 +25,7 @@ struct point_tree {
     }
   }
   pkx get(I qb, I qe, I i, I rb, I re) {
-    if (qb > re || qe < rb) return pkx(0, 0, 0);
+    if (qb > re || qe < rb) return {0, 0, 0};
     if (qb <= rb && re <= qe) return v[i];
     I mid = (rb + re) / 2;
     return get(qb, qe, 2 * i, rb, mid) * get(qb, qe, 2 * i + 1, mid + 1, re);
