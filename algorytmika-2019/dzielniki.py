@@ -1,18 +1,18 @@
-import heapq
+n = int(input())
 
-x = int(input())
-sieve = [None] * (x + 1)
-for i in range(2, x + 1):
-    if sieve[i]: continue
-    for j in range(i * i, x + 1, i):
-        sieve[j] = i
-primes = [i for i in range(2, x + 1) if sieve[i] is None]
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89]
 
-v = primes.copy()
+lim = 10 ** 14
 
+d = [lim for i in range(n + 1)]
+d[1] = 1
+for p in primes:
+    t = d.copy()
+    for i in range(n + 1):
+        for k in range(0, lim):
+            if i * (k + 1) > n or d[i] * pow(p, k) > lim:
+                break
+            t[i * (k + 1)] = min(t[i * (k + 1)], d[i] * pow(p, k))
+    d = t
 
-print(list(reversed(factorize(x))))
-c = 1
-for i, z in enumerate(reversed(factorize(x))):
-    c *= primes[i] ** (z - 1)
-print(c)
+print(d[n])
