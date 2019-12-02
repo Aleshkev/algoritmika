@@ -14,6 +14,7 @@ typedef double F;
   }
 #define comma ,
 debug_printable(typename T, vector<T>, "[", *i, "]");
+debug_printable(typename T comma size_t N, array<T comma N>, "<", *i, ">");
 debug_printable(typename T, set<T>, "{", *i, "}");
 debug_printable(typename T comma typename U, map<T comma U>, "{",
                 i->first << ": " << i->second, "}");
@@ -28,8 +29,6 @@ int main() {
   I n;
 
 #ifdef UNITEST
-  cout.flush();
-  system("pause");
+  cout.flush(), system("pause");
 #endif
-  return 0;
 }
